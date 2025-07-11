@@ -47,7 +47,7 @@ src/
 │
 ├── common/                 # Global guards, filters, decorators
 │   ├── guards/
-│   └── interceptors/
+│   ├── interceptors/
 │   └── filters/
 ├── database/               # Includes create tables sql files
 </pre>
