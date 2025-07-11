@@ -9,6 +9,7 @@ A scalable and modular e-commerce backend built with [NestJS](https://nestjs.com
 - Supabase Authentication (Signup / Login)
 - Product management with multiple images
 - Comment system with user binding
+- Cart system with user binding
 - Route protection with custom AuthGuard
 - Supabase used as the main database (PostgreSQL)
 - Only authenticated users can create comments
@@ -40,6 +41,7 @@ src/
 │   ├── auth/               # Supabase auth logic
 │   ├── product/            # Product + images
 │   └── comment/            # Comment system
+│   └── cart/               # Cart system with user binding
 │
 ├── shared/                 # Singleton-style services
 │   └── supabase/           # Supabase client/module/service
