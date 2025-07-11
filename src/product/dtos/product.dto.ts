@@ -30,3 +30,26 @@ export class CreateProductDto {
   @IsOptional()
   additional_data?: Record<string, any>;
 }
+
+export class UpdateProductDto {
+  @IsString()
+  @IsOptional()
+  title: string;
+
+  @IsString()
+  @IsOptional()
+  description: string;
+
+  @IsNumber()
+  @IsOptional()
+  price: number;
+
+  @IsArray()
+  @IsOptional()
+  @IsUrl({}, { each: true })
+  image_urls?: string[];
+
+  @IsObject()
+  @IsOptional()
+  additional_data?: Record<string, any>;
+}
