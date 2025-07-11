@@ -9,7 +9,7 @@ create table if not exists products
 (
 ),
     title text not null,
-    description text,
+    description text not null,
     price numeric not null,
     additional_data jsonb,
     created_at timestamp with time zone default now()
