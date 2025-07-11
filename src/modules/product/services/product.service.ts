@@ -39,7 +39,8 @@ export class ProductService {
     const { data, error } = await this.supabase
       .getClient()
       .from('products')
-      .select('*, product_images(*)');
+      .select('*, product_images(*)')
+      .order('created_at', { ascending: false });
 
     if (error) throw new BadRequestException(error.message);
     return data;
@@ -52,6 +53,7 @@ export class ProductService {
       .select('*, product_images(*)')
       .eq('id', productId)
       .maybeSingle();
+
     if (error) throw new BadRequestException(error.message);
     if (!data) throw new NotFoundException('product not found');
     return data;
