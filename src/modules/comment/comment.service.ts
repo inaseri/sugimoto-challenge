@@ -1,4 +1,4 @@
-import { SupabaseService } from '../shared/supabase/services/supabase.service';
+import { SupabaseService } from '../../shared/supabase/services/supabase.service';
 import {
   BadRequestException,
   Injectable,

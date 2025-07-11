@@ -11,7 +11,7 @@ import {
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { CommentService } from './comment.service';
-import { AuthGuard } from '../common/guards/auth.guard';
+import { AuthGuard } from '../../common/guards/auth.guard';
 import { CreateCommentDto, UpdateCommentDto } from './comment.dto';
 
 @Controller('comment')
