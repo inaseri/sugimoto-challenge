@@ -13,6 +13,7 @@ import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { CommentService } from './comment.service';
 import { AuthGuard } from '../../common/guards/auth.guard';
 import { CreateCommentDto, UpdateCommentDto } from './comment.dto';
+import { RequestWithUser } from '../../shared/types/request';
 
 @Controller('comment')
 @ApiTags('Comment')
@@ -27,7 +28,7 @@ export class CommentController {
   @Post()
   @ApiBearerAuth('access-token')
   @UseGuards(AuthGuard)
-  create(@Body() dto: CreateCommentDto, @Req() req: any) {
+  create(@Body() dto: CreateCommentDto, @Req() req: RequestWithUser) {
     return this.commentService.create(dto, req.user.id);
   }
 
@@ -37,7 +38,7 @@ export class CommentController {
   update(
     @Param('id') id: string,
     @Body() dto: UpdateCommentDto,
-    @Req() req: any,
+    @Req() req: RequestWithUser,
   ) {
     return this.commentService.update(id, dto, req.user.id);
   }
@@ -45,7 +46,7 @@ export class CommentController {
   @Delete(':id')
   @ApiBearerAuth('access-token')
   @UseGuards(AuthGuard)
-  delete(@Param('id') id: string, @Req() req: any) {
+  delete(@Param('id') id: string, @Req() req: RequestWithUser) {
     return this.commentService.delete(id, req.user.id);
   }
 }
