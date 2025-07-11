@@ -6,6 +6,7 @@ import { SupabaseModule } from './shared/supabase/supabase.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { ProductModule } from './modules/product/product.module';
 import { CommentModule } from './modules/comment/comment.module';
+import { CartModule } from './modules/cart/cart.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { CommentModule } from './modules/comment/comment.module';
     AuthModule,
     ProductModule,
     CommentModule,
+    CartModule,
   ],
   controllers: [AppController],
   providers: [AppService],
