@@ -1,5 +1,5 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { SupabaseService } from '../shared/supabase/services/supabase.service';
+import { SupabaseService } from '../../shared/supabase/services/supabase.service';
 import { AuthDto } from './auth.dto';
 
 @Injectable()
