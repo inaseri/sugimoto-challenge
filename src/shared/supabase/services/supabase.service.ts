@@ -11,7 +11,7 @@ export class SupabaseService {
     const key = this.configService.get<string>('SUPABASE_ANON_KEY');
 
     if (!url || !key) {
-      throw new Error('Missing SUPABASE_URL or SUPABASE_KEY in .env');
+      throw new Error('Missing SUPABASE_URL or SUPABASE_ANON_KEY in .env');
     }
 
     this.client = createClient(url, key);
