@@ -1,5 +1,5 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { SupabaseService } from '../shared/supabase/supabase.service';
+import { SupabaseService } from '../shared/supabase/services/supabase.service';
 import { AuthDto } from './auth.dto';
 
 @Injectable()
@@ -10,6 +10,7 @@ export class AuthService {
     const { data, error } = await this.supabase
       .getClient()
       .auth.signUp({ email: dto.email, password: dto.password });
+
     if (error) throw new BadRequestException(error.message);
     return data;
   }

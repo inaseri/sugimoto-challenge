@@ -1,4 +1,4 @@
-import { SupabaseService } from '../../shared/supabase/supabase.service';
+import { SupabaseService } from '../../shared/supabase/services/supabase.service';
 import { CreateProductDto, UpdateProductDto } from '../dtos/product.dto';
 import {
   BadRequestException,
